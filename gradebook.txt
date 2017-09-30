@@ -1,0 +1,90 @@
+This is the list of possibilities for the Gradebook application:
+
+Narration:
+The classroom is created a choose a subject.
+Create a Teacher instance and assign the teacher a Classroom
+Teacher asks how many student are on the roster
+A for loop iterates to input students:
+    while they are being iterated add them to the gradebook
+teacher ask for an assignment
+add assignment to the Gradebook
+    - Ask for dates and grades
+
+
+1. Beginning
+
+-----------!!!!!Teacher Class!!!!!
+The Teacher is the head of the classroom and is allowed to edit, view, delete, and update students grades
+The Gradebook is the final part of the application(IT RECIEVES FROM THE TEACHER):
+    1. The gradebook stores the students object
+The Teacher and student has a subclass named assignment(This is used to store the grade and date and name of the assignment)
+
+    *Vars*
+        teacher_name
+        class_roster: array of student_objects (this is order to store the students from the array)
+    *Functions*
+        ##techer.viewGrades(student+entry_name/date)
+        the biew grades the s
+        **teacher.viewGrades(student or dates/entry)
+        The function will get the grades from the student roster of Subject_Object
+        gradebook{'name']
+
+    __Student__
+        teacher.add_student_to_class(student_instance)
+        teacher.append(student)
+        teacher.remove_student_from_class(student)
+        teacher.edit_student(student)
+
+        __GradeBook__
+        teacher.add_to_gradebook(student+entry)--from the class_roster{dictionary}--
+-- add a function to determine whether the entry is a date or a homework assignment
+        teacher.remove_from_gradebook(student)
+        teacher.update_gradebook_entry(student)
+
+    the teacher creates a gradebook before here class arrives
+    the students are inputted in one by one
+----------!!!!The GradeBook!!!!!!
+The gradebook should be able be created and call grades To the teacher
+
+The teacher should also be able to place her roster into the Specific Gradebook
+*Vars*
+
+
+*function*
+
+
+-----------!!!The Student Class!!!!!
+    *Vars*
+        name: "Student name
+        enrolled_date: datetime.datetime(research how to create a datetime formatting for mm/dd/yyy
+        assignment: Assignment array
+    *Class*
+        --student.viewGrades(name)
+        --student.viewGrade(name,entry/date)
+
+-----------!!!!THe Assignment Class!!!!
+
+The classroom is where all the action occurs :)
+The Teacher is initallized in the classroom along with the students
+the teacher will call subsuquent classes from it's own calls
+    *Vars*
+        date_of_assignment(date.now())
+        grade_of_assingment
+        assignment_name
+        assignment_type: {Test, Quiz, Homework}(FOR THE HELPER FUNCTION THAT CALCULATES OVERALL PERCENTAGE)
+        assignment_description: String of the data stores how the student did(or None)
+        - grade and description of the assignment(written by the teacher class)
+
+----------!!!!The Classroom!!!!
+    *Vars*
+    subject
+    teachers []
+    *Functions*
+    assign_teacher(teacher)
+
+ ***Main Running***
+
+ classroom = Classroom(subject)
+ sally = Teacher(name='Sally')
+ classroom.assign_teacher(sally)
+ sally.create_roster(amount of students to add) # Array of students
