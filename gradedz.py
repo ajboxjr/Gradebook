@@ -7,12 +7,13 @@ The Gradebook contains
 
 class Gradebook(object):
     def __init__(self):
-        self.class_roster = []
+        pass
     def viewGrades(student):
         pass
 
     def view_grade(student):
         pass
+
     def add_to_gradebook(student):
         self.student_grades_arr.append(student)
         # Date or Assignment Name
@@ -42,11 +43,15 @@ class Teacher(object):
     def __init__(self, name):
         self.name = name
         self.class_roster = []
+        self.create_gradebook()
         # __Student Object__
 
+    def add_student_to_roster(self,student_name):
+        self.class_roster.append(student_name)
+
         # Student_Object or Date__of_Grades
-    def create_gradebook(self,gradebook_entry):
-        self.gradebook = gradebook_entry
+    def create_gradebook(self):
+        self.gradebook = Gradebook()
 
     def view_grades(*args, **kwds):
         self.gradebook.view_grades(student)

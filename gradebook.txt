@@ -21,9 +21,9 @@ The Teacher and student has a subclass named assignment(This is used to store th
 
     *Vars*
         teacher_name
-        class_roster: array of student_objects (this is order to store the students from the array)
+        class_roster: array of student_object_name (this is order to store the students from the array)
     *Functions*
-        ##techer.viewGrades(student+entry_name/date)
+        ##teacher.viewGrades(student+entry_name/date)
         the biew grades the s
         **teacher.viewGrades(student or dates/entry)
         The function will get the grades from the student roster of Subject_Object
@@ -31,10 +31,8 @@ The Teacher and student has a subclass named assignment(This is used to store th
 
     __Student__
         teacher.add_student_to_class(student_instance)
-        teacher.append(student)
         teacher.remove_student_from_class(student)
         teacher.edit_student(student)
-
         __GradeBook__
         teacher.add_to_gradebook(student+entry)--from the class_roster{dictionary}--
 -- add a function to determine whether the entry is a date or a homework assignment
@@ -78,6 +76,7 @@ the teacher will call subsuquent classes from it's own calls
 ----------!!!!The Classroom!!!!
     *Vars*
     subject
+    meeting_days = [] 
     teachers []
     *Functions*
     assign_teacher(teacher)
