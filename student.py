@@ -1,7 +1,7 @@
 class Student:
-    def __init__(self, name):
+    def __init__(self, name, date_added):
         self.__name = name
-        self.__date_added
+        self.__date = date_added
 
     def get_name(self):
         return self.__name

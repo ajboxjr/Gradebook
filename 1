@@ -1,4 +1,3 @@
-
 #       Documentation for the Classroom object
 #       functions:
 #           add_student()
@@ -14,7 +13,6 @@ from assignment import *
 
 def clear():
     os.system("clear")
-
 def menu():
     clear()
     menu_list = {
@@ -48,9 +46,9 @@ def add_students():
         teacher.add_student_to_roster(student_name)
         if(to_update):
             teacher.update_missing_assignments(student_name)
-    time.sleep(2)
+        time.sleep(2)
     
-    # Remove Student from roster and assignment
+    # Remove Student from roster
 def remove_student():
     if(teacher.get_roster()):
         print(teacher.get_roster());
@@ -59,7 +57,7 @@ def remove_student():
         teacher.remove_student_assingments(rm_student)
     else:
         print("There are no students in the roster")
-    time.sleep(1.5)
+        time.sleep(2)
 
 def add_assignment():
     assignment = teacher.add_assignment(input("What would you like to name the assignment"))
@@ -68,31 +66,25 @@ def add_assignment():
         
 def view_roster():
     print(teacher.get_roster())
-    time.sleep(2)
 
 def view_grades():
     print("Which grades would you like to view")
     print(" 0. All\n 1. Specific")
     option = int(input("> "))
     if(option == 0):
-        teacher.view_assignments()
+        print(teacher.get_assignments())
     elif(option ==1):
         print(teacher.get_roster())
         student_id = input("Which student would you like")
-        if student_id in teacher.get_roster():
-            teacher.view_assignments_by_student(student_id)
+        if student in self.get_roster():
+            print(self.get_assignments()[student])
     else:
         print("sorry {} is not an option".format(option))
     time.sleep(2)
 
 def edit_grade():
-    for assignment_index, assignment in enumerate(teacher.get_assignments()):
-        print('{}. {}'.format(assignment_index, assignment))
-    selected_assignment = assignment[int(input("Which assignment"))]
-    print(teacher.get_roster)
-    student = input('which student?')
-    teacher.update_assignment(selected_assignment, student)
-
+    print(teacher.get_assignments())
+    option = input("Which assignment would you like to edit")
 
 teacher_name = input("What is the teachers name?")
 teacher = Teacher(teacher_name)

@@ -1,4 +1,4 @@
-#
+ #
 from assignment import *
 from student import *
 
@@ -40,7 +40,7 @@ class Teacher:
 
     # Add grades to students added after the assignment
     def update_assignment(self, assignment, student):
-        grade = int(input("What grade did {} get on {}".format(student,assignment.get_name())))
+        grade = int(input("What grade did {} get on {}:".format(student,assignment.get_name())))
         if(grade >= 0 and grade <=100):
             assignment.set_grade(student, grade)
 
@@ -55,16 +55,28 @@ class Teacher:
     # Get the class roster     
     def get_roster(self):
         return self.class_roster 
+
     # Print/Return all of the grades for the assigment
     def get_assignment(self,assignment):
         if assignment in self.get_assignments():
-            print(self.get_assignments()[assignment])
             return self.get_assignments()[assignment]
 
     def get_assignments(self):
-        for assignment in self.assignment_list:
+        return self.assignment_list
+
+    def view_assignments(self):
+        for assignment in self.get_assignments():
             print("{}: {}".format(assignment.get_name(),assignment.get_grades()))
-            return self.assignment_list
+
+    # Return student grade and assignmentname.
+    def view_assignments_by_student(self, student_name):
+        student_assignemnts = {}
+        for assignment in self.get_assignments():
+            student_assignemnts[assignment.get_name] = assignment.get_grade(student_name)
+            print("{}: {}".format(assignment.get_grade(student_name), assignment.get_name()))
+        input()
+
+
 
     #def grade_by_student(self,student_name):
         #for assignments in self.get_ass
