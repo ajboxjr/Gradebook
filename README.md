@@ -2,11 +2,11 @@
 
 An abstraction of classes and objects in python
 
-##Getting Started
+## Getting Started
 
 Git Clone the directory.
 
-###Prerequesities
+### Prerequesities
 
 The program is written in python3. It is reccomended to install python using
 `pip3 install python`
